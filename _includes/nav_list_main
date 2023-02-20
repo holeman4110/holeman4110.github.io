@@ -1,0 +1,56 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total Posts</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+        <span class="nav__sub-title">About</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "resume" %}
+                        <li><a href="/resume/" class="">Resume </a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "portfolio" %}
+                        <li><a href="/portfolio/" class="">Portfolio </a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        <span class="nav__sub-title">Edu</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "keduit" %}
+                        <li><a href="/categories/#keduit" class="">한국정보교육원 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "os" %}
+                        <li><a href="/categories/#os" class="">운영체제 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "git" %}
+                        <li><a href="/categories/#git" class="">git ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "certificate" %}
+                        <li><a href="/categories/#certificate" class="">자격증 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+  </ul>
+</nav>
