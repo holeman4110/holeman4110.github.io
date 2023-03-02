@@ -126,6 +126,7 @@ SELinux is Enforcing now, this makes httpd failed.
 # firewall-cmd --add-service=http --permanent
 # firewall-cmd --add-port=82/tcp --permanent
 # firewall-cmd --reload
+# man semanage fcontext | grep \#
 # semanage fcontext -m -t httpd_sys_contect_t "/var/www/html/file1"
 # restorecon -Rv /var/www/html/
 # systemctl restart httpd
@@ -228,6 +229,7 @@ Configure ntp client to sync time through kr.pool.ntp.org
 server kr.pool.ntp.org iburst //추가
 # systemctl enable --now chronyd
 # systemctl restart chronyd
+# hwclock -w
 # chronyc sources
 # timedatectl
 // System clock synchronized:yes, NTP service: active 2가지 확인
@@ -330,7 +332,7 @@ accessnfs -rw,soft,intr xxx.xxx.xxx.xxx:/share //server ip
 ```
 
 ### 1-13. podman
-https://blog.csdn.net/weixin_62782025/article/details/127580531?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167772840616800182156671%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167772840616800182156671&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~times_rank-1-127580531-null-null.142^v73^insert_down3,201^v4^add_ask,239^v2^insert_chatgpt&utm_term=ex200&spm=1018.2226.3001.4449
+
 ```
 //문제1
 자동으로 시작하도록 컨테이너 구성(볼륨)
@@ -351,31 +353,69 @@ wallah사용자를 위해 systemd 서비스를 구성합니다.
 ```
 
 ```
-// 1. Pull a container image
-# dnf search podman
-# dnf install -y podman.x86_64
-# loginctl enable-linger //일반user도 container 사용가능하게 하는 명령
-# su kim
-# podman login registry.redhat.io //
-username, password
-# podman search httpd //찾고자하는 image httpd 자리에 입력
-# podman pull docker.io/libarary/httpd //위에서 찾은 httpd의 링크를 기준으로 예시 
-// 2. Run a container
-# podman images //list보기(Image ID 확인필요)
-# podman run -d --name web1 dabbfbe0c57b //httpd 이미지 id를 web1의 이름으로 실행
-# podman ps
-// 3. Map the container to a local dir
-# mkdir /web 
-# echo "This is test page for container" >> /web/test.html
-# podman run -d --name web4 -p 8080:80 -v /web:/usr/local/apache/htdocs dabbfbe0c57b
-// 4. Run the Container as a service
-# podman generate systemd web4 > /etc/systemd/system/NameWhatIWant
-# systemctl daemon-reload
-# systemctl enable --now NameWhatIWant
-# systemctl status NameWhatIWant
+# systemctl list-unit-files | greep journal
+# systemctl status systemd-journald
+# man journald.conf
+# vim /etc/systemd/journald.conf
+Storage = auto
+# man journald.conf
+# ll -d /run/log/journal
+# mkdir /var/log/journal
+# chown root:systemd-journal /var/log/journal
+# chmod g+s /var/log/journal
+# systemctl restart systemd-journald
+# ls /var/log/journal
+# ls /run/log/journal
+# cp /var/log/journal/*/*.journal /home/wallah/container_logfile/
+# chown -R wallah ~wallah
+# ll -Z /home/wallah/container_logfile/
 
-//optional
-# podman rmi 이미지네임 //삭제
+# ssh wallah@localhost
+# podman login registry.domain250.example.com
+# podman search registry.domain250.example.com
+# podman run -d --name logserver \
+# podman stop logserver
+# loginctl enable-linger
+# loginctl show-user wallah
+# man systemd.unit | grep config.*user
+# mkdir -p ~/.config/systemd/user/
+# cd ~/.config/systemd/user/
+# podman generate systemd -n logserver -f
+# systemctl --user enable --now container-logserver
+# systemctl --user status container-logserver
+# podman exec logserver ls /var/log/journal
+# reboot
+# ps aux | grep -n podman
+```
+
+```
+//문제3
+레지스트리 서버의 rsyslog이미지를 logger이름이 지정된 컨테이너를 만듭니다.
+wallah사용자를 위해 systemd 서비스를 구성합니다.
+서비스 이름이 지정되고 container-logger개입 없이 시스템 재부팅 시 자동으로 시작됩니다.
+시작 시 컨테이너 아래에 자동으로 /home/wallah/var_log마운트/var/log
+컨테이너에서 명령 실행podman exec logger logger -p authpriv.info SUIBIAN
+```
+
+```
+# ssh wallah@localhost
+# podman login -u admin -p redhat321
+# podman search registry.domain250.example.com/
+# podman run -d --name logger \
+# podman stop logger
+# loginctl enable-linger
+# loginctl show-user wallah
+# man systemd.unit | grep =A 20 \\--user
+# mkdir -p ~/.confing/systemd/user/
+# cd ~/.config/systemd/user/
+# podman generate systemd -n logger -f
+# systemctl --user enable --now container-logger
+# systemctl --user status container-logger
+# podman exec logger logger -p authpriv.info SUIBIAN
+# grep authpriv /etc/rsyslog.conf
+# grep SUIBIAN /home/wallah/var_log/secure
+# reboot
+# ps -aux | grep podman
 ```
 
 ### 1-14 Password Aging Control
@@ -397,6 +437,7 @@ Create a backup file named /root/backuptest.tar, contains the content of /usr/lo
 ```
 
 ```
+# man tar | grep bzip2
 # tar -cfj /root/backuptest.tar /usr/localtest
 // c(create), j(bzip2), tar [파일명.tar] [대상 폴더명] 
 ```
