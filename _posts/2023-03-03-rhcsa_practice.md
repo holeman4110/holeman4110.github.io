@@ -132,6 +132,7 @@ SELinux is Enforcing now, this makes httpd failed.
 # systemctl restart httpd
 # systemctl enable httpd
 # systemctl status httpd
+# curl http:172.25.250.10:82
 // 웹브라우저 상에서 ip:82/file1 으로 잘 보이나 확인 
 ```
 
@@ -154,6 +155,7 @@ Add user 'teacher' who can use sudo command without passwd.
 # echo 'keduit' | passwd --stdin kim
 # echo 'keduit' | passwd --stdin kang
 # echo 'keduit' | passwd --stdin choi
+# tail /etc/password
 # useradd teacher
 # echo 'teacher ALL=NOPASSWD:ALL' >> /etc/sudoers
 # su teacher
