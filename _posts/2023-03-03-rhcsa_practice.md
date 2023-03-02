@@ -452,27 +452,14 @@ Reset root passwd to 'keduit'
 
 ```
 grub -> e
-In linux line change ro(crash~ 앞) to rw and add init=/sysroot/bin/bash at the end of the line. 
+In linux line change ro(crash~ 앞) to rw and add init=/bin/bash at the end of the line. 
 ctrl + x
-# mount -o remount,rw /sysroot
-# chroot /sysroot
+# mount -o remount,rw /
 # passwd
 keduit
 keduit
 # touch /.autorelabel
-ctrl + d //twice
-```
-
-```
-//Optional
-grub -> rescue mode -> e
-In linux~ line, add rd.break to the end of the line.
-ctrl + x
-# mount -o remount,rw /sysroot
-# chroot /sysroot
-# passwd
-# touch /.autorelabel
-ctrl + d //twice
+# exec /sbin/bash
 ```
 
 ### 2-2. Base Repo
