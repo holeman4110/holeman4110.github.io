@@ -191,7 +191,7 @@ But root can do anything.
 # mkdir -p /home/shared
 # ls -ltr /home
 //기본적으로 drwxr-xr-x 권한으로 디렉토리가 생기는것을 확인 가능
-# chwon -R root:keduit /home/shared
+# chown -R root:keduit /home/shared
 # chmod -R 2770 /home/shared
 # ls -ltr /home
 # touch /home/shared/testfile01
