@@ -246,7 +246,7 @@ Find the files owned by user 'kim', and copy it to /root/findfiles
 
 ```
 # mkdir -p /root/findfiles
-# find / -user kim | xargs -t cp /root/findfiles
+# find / -user kim | xargs cp -t /root/findfiles
 ```
 
 ### 1-11. Find String
