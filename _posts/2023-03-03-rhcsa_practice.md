@@ -155,7 +155,7 @@ Add user 'teacher' who can use sudo command without passwd.
 # echo 'keduit' | passwd --stdin kim
 # echo 'keduit' | passwd --stdin kang
 # echo 'keduit' | passwd --stdin choi
-# tail /etc/password
+# tail /etc/passwd
 # useradd teacher
 # echo 'teacher ALL=NOPASSWD:ALL' >> /etc/sudoers
 # su teacher
@@ -190,7 +190,7 @@ But root can do anything.
 ```
 # mkdir -p /home/shared
 # ls -ltr /home
-//기본적으로 drwxr-xr-x 권한으로 파일이 생기는것을 확인 가능
+//기본적으로 drwxr-xr-x 권한으로 디렉토리가 생기는것을 확인 가능
 # chwon -R root:keduit /home/shared
 # chmod -R 2770 /home/shared
 # ls -ltr /home
@@ -459,7 +459,7 @@ ctrl + x
 keduit
 keduit
 # touch /.autorelabel
-# exec /sbin/bash
+# exec /sbin/ini
 ```
 
 ### 2-2. Base Repo
