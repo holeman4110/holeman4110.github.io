@@ -309,30 +309,6 @@ ldapuser0 -rw,sync serverb.lab.example.com:/rhome/ldapuser0
 # exportfs -avr 
 ```
 
-```
-//client side
-# dnf install -y nfs-utils
-# dnf install -y autofs
-# systemctl status nfs-server
-# systemctl enable --now nfs-server
-# systemctl status autofs
-# systemctl enable --now autofs
-# firewall-cmd --add-service={nfs,mountd,rpc-bind} --permanent
-# firewall-cmd --reload
-# showmount -e xxx.xxx.xxx.xxx //client ip
-# vim /etc/auto.master
-/misc /etc/auto.misc //해당 라인 주석처리
-/auto_mount /etc/auto.misc //auto_mount는 나한테 보여질 디렉토리
-# vim /etc/auto.misc
-accessnfs -rw,soft,intr xxx.xxx.xxx.xxx:/share //server ip
-# ls /
-# systemctl restart autofs
-# ls /
-# cd /auto_mount
-# ls
-# cd accessnfs
-```
-
 ### 1-13. podman
 
 ```
