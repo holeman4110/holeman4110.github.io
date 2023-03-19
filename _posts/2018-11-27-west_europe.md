@@ -2,7 +2,7 @@
 layout: single
 title: "서유럽 여행기록 #1.프랑스, 모나코(feat.베이징)"
 categories: trip
-tags: [2018/11/27, 여행, 서유럽, 프랑스, 스위스, 이탈리아]
+tags: [2018/11/27, 여행, 베이징, 서유럽, 프랑스, 모나코]
 toc: true
 toc_sticky: true
 author_profile: true
