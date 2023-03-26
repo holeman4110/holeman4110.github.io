@@ -1,6 +1,6 @@
 ---
 title: "network"
-layout: category
+layout: archive
 permalink: /categories/network/
 author_profile: true
 taxonomy: "network"
