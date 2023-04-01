@@ -68,5 +68,12 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "workingholiday" %}
+                        <li><a href="/categories/#workingholiday" class="">Working Holiday ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
   </ul>
 </nav>
