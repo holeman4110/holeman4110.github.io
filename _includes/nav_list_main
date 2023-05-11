@@ -15,13 +15,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "portfolio" %}
-                        <li><a href="/portfolio/" class="">Portfolio </a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
 
         <span class="nav__sub-title">Edu</span>
             <ul>
@@ -34,21 +27,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "network" %}
-                        <li><a href="/categories/#network" class="">네트워크 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/#network" class="">Network ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "os" %}
-                        <li><a href="/categories/#os" class="">운영체제 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "git" %}
-                        <li><a href="/categories/#git" class="">git ({{category[1].size}})</a></li>
+                        <li><a href="/categories/#linux" class="">Linux ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -56,6 +42,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "certificate" %}
                         <li><a href="/categories/#certificate" class="">자격증 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "git" %}
+                        <li><a href="/categories/#git" class="">git ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

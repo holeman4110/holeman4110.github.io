@@ -1,9 +1,9 @@
 ---
-title: "os"
+title: "Linux"
 layout: category
-permalink: /categories/os/
+permalink: /categories/linux/
 author_profile: true
-taxonomy: "os"
+taxonomy: "linux"
 sidebar:
     nav: "docs"
 ---
@@ -11,5 +11,5 @@ sidebar:
 
 
 
-{% assign posts = site.categories.os %}
+{% assign posts = site.categories.linux %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
