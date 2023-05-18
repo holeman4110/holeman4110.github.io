@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "RHCSA Practice Test with answer"
-categories: os
+categories: linux
 tags: [2023/03/02, 운영체제, RHCSA, CentOS, 레드햇]
 toc: true
 toc_sticky: true
@@ -11,15 +11,15 @@ share: true
 related: true
 published: true
 hidden: false
-sidebar: 
-    nav: "docs"
+sidebar:
+  nav: "docs"
 ---
 
-## 1. 서론  
+## 1. 서론
 
 &nbsp;&nbsp;&nbsp;&nbsp; [RCHSA 기술개요](https://www.redhat.com/ko/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=%EB%AA%A9%ED%91%9C) RHCSA를 취득하기 위해 필요한 기술들이 나와있는 공홈 페이지다. 그에 따라 기존에 공부한 내용들을 연습하고 수정할 부분은 수정하여 최종적으로 모아 연습해볼 수 있도록 만든 포스팅이다.
 
-## 2. 본론  
+## 2. 본론
 
 ```
 # systemctl get-defalut
@@ -52,7 +52,7 @@ Host Name: node1.domain250.example.com
 
 ```
 # hostnamectl status
-# hostnamectl set-hostname node1.domain250.example.com 
+# hostnamectl set-hostname node1.domain250.example.com
 # hostnamectl status
 # ip a
 # nmtui
@@ -133,7 +133,7 @@ SELinux is Enforcing now, this makes httpd failed.
 # systemctl enable httpd
 # systemctl status httpd
 # curl http:172.25.250.10:82
-// 웹브라우저 상에서 ip:82/file1 으로 잘 보이나 확인 
+// 웹브라우저 상에서 ip:82/file1 으로 잘 보이나 확인
 ```
 
 ### 1-5. Add User(Group)
@@ -201,7 +201,7 @@ But root can do anything.
 ### 1-8. File permission
 
 ```
-Copy /etc/fstab to /var/tmp. Change owner group to 'keduit', the user 'kim' could read, write and modify it, while user 'kang' and any other user without any permission. 
+Copy /etc/fstab to /var/tmp. Change owner group to 'keduit', the user 'kim' could read, write and modify it, while user 'kang' and any other user without any permission.
 ```
 
 ```
@@ -259,7 +259,7 @@ Find the rows that contain pizza from file /etc/pizzafile, and write it to the /
 # grep pizza /etc/pizzafile > /tmp/pizza.txt
 ```
 
-### 1-12. nfs / autofs 
+### 1-12. nfs / autofs
 
 ```
 다음 요구 사항에 따라 servera에서 autofs 자동 마운트를 구성합니다.
@@ -306,7 +306,7 @@ ldapuser0 -rw,sync serverb.lab.example.com:/rhome/ldapuser0
 # firewall-cmd --reload
 # systemctl enable --now nfs-server
 # systemctl enable --now autofs
-# exportfs -avr 
+# exportfs -avr
 ```
 
 ### 1-13. podman
@@ -417,7 +417,7 @@ Create a backup file named /root/backuptest.tar, contains the content of /usr/lo
 ```
 # man tar | grep bzip2
 # tar -cfj /root/backuptest.tar /usr/localtest
-// c(create), j(bzip2), tar [파일명.tar] [대상 폴더명] 
+// c(create), j(bzip2), tar [파일명.tar] [대상 폴더명]
 ```
 
 ### 2-1. Reset root password
@@ -428,7 +428,7 @@ Reset root passwd to 'keduit'
 
 ```
 grub -> e
-In linux line change ro(crash~ 앞) to rw and add init=/bin/bash at the end of the line. 
+In linux line change ro(crash~ 앞) to rw and add init=/bin/bash at the end of the line.
 ctrl + x
 # mount -o remount,rw /
 # passwd
@@ -507,7 +507,7 @@ Change the logical volume capacity 'lvo1' from 190M to 300M. And the size of the
 # df -h
 # lvs
 # lvextend -L +110M /dev/VG1/lvo1
-# vgs 
+# vgs
 # resize2fs /dev/VG1/lvo1
 ```
 
@@ -539,7 +539,7 @@ Remove logical volume and group we made above, and then make new one set 8M as a
 #### 1. 예제1
 
 ```
-Create a 1G partition and which take effect automatically at boot-start. 
+Create a 1G partition and which take effect automatically at boot-start.
 ```
 
 ```
@@ -599,7 +599,7 @@ Please open the ip_forward, and take effect permanently.
 ```
 # sysctl net.ipv4.ip_forward
 // '0' means off, '1' means on
-# sysctl -w net.ipv4.ip_forward=1 
+# sysctl -w net.ipv4.ip_forward=1
 # vim /etc/sysctl.conf
 net.ipv4.ip_forward=1 //Add this line to the bottom of the file
 ```
@@ -607,14 +607,14 @@ net.ipv4.ip_forward=1 //Add this line to the bottom of the file
 ### 2-7. Hard Link, Soft(Symbolic) Link
 
 ```
-Make a /etc/linktest.txt 
+Make a /etc/linktest.txt
 Make a Hard Link named hlink at /etc/linkexam/
 Make a Soft Link named slink at /etc/linkexam/
 ```
 
 ```
-# ln /etc/linktest.txt /etc/linkexam/hlink 
-# ln -s /etc/linktest.txt /etc/linkexam/slink 
+# ln /etc/linktest.txt /etc/linkexam/hlink
+# ln -s /etc/linktest.txt /etc/linkexam/slink
 ```
 
 ### 2-8. UMASK
@@ -629,7 +629,7 @@ It's only affect user 'kim'
 # umask 044 //file's default umask is 666, dir's 777
 ```
 
-## 3. 결론  
+## 3. 결론
 
 &nbsp;&nbsp;&nbsp;&nbsp; 쉽지 않다.
 
