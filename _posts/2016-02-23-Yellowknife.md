@@ -11,8 +11,8 @@ share: true
 related: true
 published: true
 hidden: false
-sidebar: 
-    nav: "docs"
+sidebar:
+  nav: "docs"
 ---
 
 ## 1. 옐로나이프
