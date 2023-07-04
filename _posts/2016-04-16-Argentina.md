@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "아르헨티나 여행 기록(2016.04.16 - 04.24)"
+title: "[Trip] 아르헨티나 여행 기록(2016.04.16 - 04.24)"
 categories: trip
 tags: [2016/04/16, 여행, 남미, 아르헨티나]
 toc: true
@@ -11,8 +11,8 @@ share: true
 related: true
 published: true
 hidden: false
-sidebar: 
-    nav: "docs"
+sidebar:
+  nav: "docs"
 ---
 
 ## 1. 엘 찰텐(El Chalten) / 피츠로이(Cerro Fitz Roy)

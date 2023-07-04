@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "서유럽 여행기록 #1.프랑스, 모나코(feat.베이징) (2018.11.27 - 12.06)"
+title: "[Trip] 서유럽 여행기록 #1.프랑스, 모나코(feat.베이징) (2018.11.27 - 12.06)"
 categories: trip
 tags: [2018/11/27, 여행, 베이징, 서유럽, 프랑스, 모나코]
 toc: true
@@ -11,8 +11,8 @@ share: true
 related: true
 published: true
 hidden: false
-sidebar: 
-    nav: "docs"
+sidebar:
+  nav: "docs"
 ---
 
 ## 1. 베이징
@@ -156,7 +156,6 @@ sidebar:
 ![20181206_105645](https://user-images.githubusercontent.com/124491456/226146320-6bb2519c-7f5e-4a5f-8bfe-32113a4f9e09.jpg)
 
 ![20181206_111005](https://user-images.githubusercontent.com/124491456/226146321-e0701373-b8f8-416e-941a-170bc92fd385.jpg)
-
 
 ---
 

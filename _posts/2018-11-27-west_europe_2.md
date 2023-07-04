@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "서유럽 여행기록 #2.스위스 (2018.12.06 - 12.11)"
+title: "[Trip] 서유럽 여행기록 #2.스위스 (2018.12.06 - 12.11)"
 categories: trip
 tags: [2018/11/27, 여행, 서유럽, 스위스]
 toc: true
@@ -11,8 +11,8 @@ share: true
 related: true
 published: true
 hidden: false
-sidebar: 
-    nav: "docs"
+sidebar:
+  nav: "docs"
 ---
 
 ## 1. 스위스
@@ -61,12 +61,6 @@ sidebar:
 ![20181210_121309](https://user-images.githubusercontent.com/124491456/226147756-0d6dc173-a6ad-426b-9ef1-ae5b23b784ed.jpg)
 ![20181210_141800](https://user-images.githubusercontent.com/124491456/226147766-d1d9bd12-c50e-4e94-bd5c-54b73c7d2566.jpg)
 ![DSC02155](https://user-images.githubusercontent.com/124491456/226147772-93e6f766-639d-456a-8eed-a0e9c7b29d90.JPG)
-
-
-
-
-
-
 
 ---
 

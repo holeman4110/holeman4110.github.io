@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "서유럽 여행기록 #3.이탈리아 (2018.12.11 - 12.20)"
+title: "[Trip] 서유럽 여행기록 #3.이탈리아 (2018.12.11 - 12.20)"
 categories: trip
 tags: [2018/11/27, 여행, 서유럽, 이탈리아]
 toc: true
@@ -11,8 +11,8 @@ share: true
 related: true
 published: true
 hidden: false
-sidebar: 
-    nav: "docs"
+sidebar:
+  nav: "docs"
 ---
 
 ## 1. 이탈리아
@@ -85,7 +85,6 @@ sidebar:
 ![20181216_125046](https://user-images.githubusercontent.com/124491456/226148445-e8e018c4-c449-4068-a602-cfc91d8a2d13.jpg)
 ![20181216_145322](https://user-images.githubusercontent.com/124491456/226148467-7a8ac3b8-6724-4fd7-a0d0-4760c80e8e12.jpg)
 ![20181216_145414](https://user-images.githubusercontent.com/124491456/226148469-43192054-633b-4e36-aee9-d24083df6db0.jpg)
-
 
 #### 6. 바티칸
 
