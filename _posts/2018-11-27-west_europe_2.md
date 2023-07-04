@@ -33,7 +33,7 @@ sidebar:
 ![20181207_143737](https://user-images.githubusercontent.com/124491456/226146905-394e0a6f-2c5f-49eb-8e47-161171e4d100.jpg)
 ![20181207_143801](https://user-images.githubusercontent.com/124491456/226146909-6316f7a2-5cd4-4673-a37a-c2d6b4b8c288.jpg)
 ![20181207_144025](https://user-images.githubusercontent.com/124491456/226146924-08b712f1-0430-4477-a59b-3048d7d07550.jpg)
-![20181207_144240](https://user-images.githubusercontent.com/124491456/226146930-21f4b0b7-3737-4b46-bbf6-e6c2dd8ef1c9.jpg
+![20181207_144240](https://user-images.githubusercontent.com/124491456/226146930-21f4b0b7-3737-4b46-bbf6-e6c2dd8ef1c9.jpg)
 ![1544193679208](https://user-images.githubusercontent.com/124491456/226148651-cff3e895-bfa9-46bf-a375-8fc6521a7844.jpg)
 ![20181207_151108_791](https://user-images.githubusercontent.com/124491456/226146935-1db19d09-9518-4083-b0bd-7a29b3869480.jpg)
 ![20181207_151424](https://user-images.githubusercontent.com/124491456/226146941-263a0c1b-9c07-47c1-904d-9609e378d70d.jpg)
