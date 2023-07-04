@@ -5,8 +5,8 @@
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
   <ul class="nav__items" id="category_tag_menu">
 
-            📂 <span style="font-family:'Cafe24Oneprettynight';">Total Posts</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
-      </li>
+    📂 <span class="nav__sub-title">Total Posts : {{sum}}개</span>
+
         <span class="nav__sub-title">About</span>
             <ul>
                 {% for category in site.categories %}
