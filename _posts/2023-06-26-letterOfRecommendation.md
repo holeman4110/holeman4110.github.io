@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Letter of recommendation"
+title: "[KEDUIT] Letter of recommendation"
 categories: keduit
 tags: [2023/06/26, 추천서]
 toc: true
